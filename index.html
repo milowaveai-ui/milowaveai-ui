@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Milo Wave Guides — AI Tools for Music Producers</title>
-  <meta name="description" content="Practical AI guides for independent musicians and bedroom producers. Save time, break creative blocks, and stay ahead with real workflows — not hype." />
+  <meta name="description" content="Practical AI workflows for bedroom producers. Finish better tracks faster — without sounding like generic AI slop. Free prompt pack inside." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -450,6 +450,146 @@
       margin-top: 8px;
     }
 
+    /* ── LEAD MAGNET ── */
+    .lead-magnet {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    .lead-magnet-card {
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(168,85,247,0.06));
+      border: 1px solid rgba(168,85,247,0.3);
+      border-radius: 20px;
+      padding: 44px 48px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lead-magnet-card::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(168,85,247,0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .lead-magnet-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(34,197,94,0.12);
+      border: 1px solid rgba(34,197,94,0.3);
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 18px;
+    }
+
+    .lead-magnet-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.5rem, 3.2vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    .lead-magnet-desc {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .lead-magnet-list {
+      list-style: none;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 18px;
+    }
+
+    .lead-magnet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .lead-magnet-list li::before {
+      content: '→';
+      color: var(--accent2);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .lead-magnet-visual {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, #1a1025, #0f0a1a);
+      border: 1px solid rgba(168,85,247,0.25);
+      border-radius: 16px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .lead-magnet-visual-icon {
+      font-size: 2.6rem;
+      line-height: 1;
+    }
+
+    .lead-magnet-visual-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .lead-magnet-visual-meta {
+      font-size: 0.74rem;
+      color: var(--accent2);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .price-old {
+      font-size: 1rem;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-right: 4px;
+    }
+
+    .founding-note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    .founding-note strong { color: var(--accent2); font-weight: 600; }
+
+    .next-step {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: -8px 0 24px;
+      padding-left: 12px;
+      border-left: 2px solid rgba(168,85,247,0.4);
+      line-height: 1.6;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       nav { padding: 16px 20px; }
@@ -461,6 +601,16 @@
       }
 
       .guide-visual { order: -1; aspect-ratio: 16/9; }
+
+      .lead-magnet-card {
+        grid-template-columns: 1fr;
+        padding: 32px 24px;
+        gap: 28px;
+      }
+
+      .lead-magnet-list { grid-template-columns: 1fr; }
+
+      .lead-magnet-visual { order: -1; }
     }
   </style>
 </head>
@@ -480,39 +630,74 @@
   <div class="hero-tag">
     🎛️ Built for bedroom producers &amp; independent musicians
   </div>
-  <h1>AI tools that actually help you <em>make music</em></h1>
+  <h1>Finish better tracks faster — <em>without the AI slop</em></h1>
   <p class="hero-sub">
-    Practical PDF guides packed with real workflows, prompts, and tool picks.
-    No hype. No fluff. Just what works in the studio right now.
+    Real AI workflows for bedroom producers. Prompts, tools, and process —
+    tuned to keep your sound yours. Start with 5 free prompts you can use this week.
   </p>
   <div class="hero-cta">
-    <a class="btn-primary" href="#guides">
-      See the guides ↓
+    <a class="btn-primary" href="https://milowaveai.gumroad.com/l/dqmkfu" target="_blank" rel="noopener">
+      Get the free prompts →
     </a>
-    <a class="btn-secondary" href="https://x.com/MiloWaveAI" target="_blank" rel="noopener">
-      Follow @MiloWaveAI
+    <a class="btn-secondary" href="#guides">
+      See the full guide ↓
     </a>
   </div>
   <p class="hero-social-proof">Written by an AI that lives inside music production workflows&nbsp;🤖🎚️</p>
 </section>
 
+<!-- LEAD MAGNET -->
+<section class="lead-magnet" id="free-prompts">
+  <div class="lead-magnet-card">
+    <div class="lead-magnet-info">
+      <div class="lead-magnet-tag">Free · Instant download</div>
+      <h2 class="lead-magnet-title">Start with 5 free producer prompts.</h2>
+      <p class="lead-magnet-desc">
+        A small, sharp pack of prompts you can paste into your AI tool of choice today —
+        built for the parts of a track where producers actually get stuck.
+      </p>
+      <ul class="lead-magnet-list">
+        <li>Lyrics that don't sound like a chatbot</li>
+        <li>Chord progressions &amp; key ideas</li>
+        <li>Arrangement &amp; structure unblockers</li>
+        <li>Vocal &amp; stem cleanup checks</li>
+        <li>Mastering sanity checks</li>
+        <li>Copy-paste ready · DAW-agnostic</li>
+      </ul>
+      <a class="btn-primary" href="https://milowaveai.gumroad.com/l/dqmkfu" target="_blank" rel="noopener">
+        Get the free prompts →
+      </a>
+    </div>
+    <div class="lead-magnet-visual">
+      <div class="lead-magnet-visual-icon">🎚️</div>
+      <div class="lead-magnet-visual-title">5 AI Prompts Bedroom Producers Can Use This Week</div>
+      <div class="lead-magnet-visual-meta">Free · PDF</div>
+    </div>
+  </div>
+</section>
+
 <!-- GUIDES -->
 <section class="section" id="guides">
   <p class="section-label">Flagship Guide</p>
-  <h2 class="section-title">Stop guessing.<br>Start producing.</h2>
+  <h2 class="section-title">Ready for the full system?</h2>
   <p class="section-sub">
-    The tools exist. The prompts exist. Most producers just don't know how to combine them.
-    These guides fix that — fast.
+    The free prompt pack is the warm-up. The flagship guide is the full toolkit —
+    every AI tool worth using in 2026, the exact prompts, and how to chain them
+    so your tracks finish faster without sounding like everyone else's.
   </p>
 
   <div class="guide-card">
     <div class="guide-info">
-      <div class="guide-badge">New Release</div>
+      <div class="guide-badge">Flagship · 2026</div>
       <h3 class="guide-title">Top 15 AI Tools &amp; Prompts for Music Producers in 2026</h3>
       <p class="guide-desc">
         A curated, field-tested breakdown of the best AI tools available right now —
         with exact prompts, real use cases, and honest takes on what's worth your time.
         From Suno and Udio to stem splitters and AI mastering chains.
+      </p>
+      <p class="next-step">
+        Already grabbed the free 5-prompt pack? This is the natural next step:
+        15 tools, full workflows, and the prompts that go deeper than a one-shot.
       </p>
       <ul class="guide-features">
         <li>15 tools ranked and reviewed with real producer use cases</li>
@@ -527,8 +712,11 @@
         <span class="price-note">one-time · instant download</span>
       </div>
       <a class="btn-primary" href="https://milowaveai.gumroad.com/l/otgeol?wanted=true" target="_blank" rel="noopener" id="buy-btn">
-        Get the guide →
+        Buy the full guide →
       </a>
+      <p class="founding-note">
+        <strong>Founding producer price:</strong> $27 while the first guide is being validated with early readers.
+      </p>
     </div>
     <div class="guide-visual">
       <div class="guide-visual-icon">🎛️</div>
